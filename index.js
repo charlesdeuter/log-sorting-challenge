@@ -1,11 +1,11 @@
 'use strict'
 
 const _ = require('lodash');
-const LogSource = require('./lib/log-source')
-const Printer = require('./lib/printer')
+const LogSource = require('./lib/log-source');
+const Printer = require('./lib/printer');
 
 // You can adjust this variable to see how your solutions perform under various "load"
-const sourceCount = 10
+const sourceCount = 1000;
 
 /**
  * Challenge Number 1!
@@ -28,11 +28,11 @@ const sourceCount = 10
  * Call 'printer.done()' at the end to get a few stats on your solution!
  */
 
-const syncLogSources = []
+const syncLogSources = [];
 
 _.times(sourceCount, () => syncLogSources.push(new LogSource()));
 
-require('./solution/sync-sorted-merge')(syncLogSources, new Printer())
+require('./solution/sync-sorted-merge')(syncLogSources, new Printer());
 
 /**
  * Challenge Number 2!
@@ -42,8 +42,8 @@ require('./solution/sync-sorted-merge')(syncLogSources, new Printer())
  * or boolean false once the LogSource has ended.
  */
 
-const asyncLogSources = []
+const asyncLogSources = [];
 
 _.times(sourceCount, () => asyncLogSources.push(new LogSource()));
 
-//require('./solution/async-sorted-merge')(asyncLogSources, new Printer())
+require('./solution/async-sorted-merge')(asyncLogSources, new Printer());
